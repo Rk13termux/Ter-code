@@ -33,8 +33,8 @@ class TermuxScriptsApp extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.redAccent,
             foregroundColor: Colors.black,
-            padding: EdgeInsets.symmetric(vertical: 14, horizontal: 28),
-            textStyle: TextStyle(
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 28),
+            textStyle: const TextStyle(
               fontWeight: FontWeight.bold,
               fontFamily: 'Courier',
               fontSize: 16,
@@ -51,7 +51,7 @@ class TermuxScriptsApp extends StatelessWidget {
           ),
           margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
         ),
-        listTileTheme: ListTileThemeData(
+        listTileTheme: const ListTileThemeData(
           iconColor: Colors.redAccent,
           textColor: Colors.white,
         ),
