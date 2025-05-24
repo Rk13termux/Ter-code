@@ -1,4 +1,4 @@
-// App routes go hereimport 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; // NECESARIO
 import '../screens/home_screen.dart';
 import '../screens/script_list_screen.dart';
 import '../screens/script_view_screen.dart';
