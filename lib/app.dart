@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'routes/routes.dart';
-import 'screens/welcome_screen.dart';
+import 'screens/home_screen.dart';
 
 class TermuxScriptsApp extends StatelessWidget {
   const TermuxScriptsApp({super.key});
@@ -62,7 +62,7 @@ class TermuxScriptsApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const WelcomeScreen(),
+      home: const HomeScreen(),
       routes: appRoutes,
     );
   }
