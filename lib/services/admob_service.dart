@@ -1,29 +1,23 @@
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdMobService {
-  static final AdRequest _request = AdRequest();
+  static RewardedAd? _rewardedAd;
 
-  static InterstitialAd? _interstitialAd;
-
-  static Future<void> showInterstitialAd() async {
-    await InterstitialAd.load(
-      adUnitId: 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX', // Reemplaza con tu ID real
-      request: _request,
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (InterstitialAd ad) {
-          _interstitialAd = ad;
-          _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-            onAdDismissedFullScreenContent: (InterstitialAd ad) {
-              ad.dispose();
-            },
-            onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
-              ad.dispose();
+  static void loadRewardedAd(Function onReward) {
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-8734717055869688/4269039141',
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (RewardedAd ad) {
+          _rewardedAd = ad;
+          _rewardedAd!.show(
+            onUserEarnedReward: (ad, reward) {
+              onReward();
             },
           );
-          _interstitialAd!.show();
         },
-        onAdFailedToLoad: (LoadAdError error) {
-          print('Error al cargar InterstitialAd: $error');
+        onAdFailedToLoad: (error) {
+          print('Error al cargar anuncio recompensado: $error');
         },
       ),
     );
