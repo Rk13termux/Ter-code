@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,17 +7,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Inicio del sistema'),
-      ),
-      body: const Center(
-        child: Text(
-          'Bienvenido a Termux Scripts PRO',
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.white,
-            fontFamily: 'Courier',
-          ),
+      appBar: AppBar(title: const Text('Centro de Control Termux')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => Navigator.pushNamed(context, '/scripts'),
+          child: const Text('Ver Scripts Disponibles'),
         ),
       ),
     );
